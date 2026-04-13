@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+  <title>Cemilan Remaja | Piscok Bola-Bola Lumer & Roti Gulung Cream</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background: #fef7e8;
+      font-family: 'Quicksand', sans-serif;
+      color: #3b2a1f;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 5%;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #ffe0bb;
+      gap: 10px;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #c2692c, #a04512);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .logo i {
+      background: none;
+      color: #c2692c;
+      font-size: 1.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #875a38;
+      transition: 0.2s;
+      padding: 6px 0;
+    }
+
+    .nav-links a:active {
+      opacity: 0.7;
+    }
+
+    #waGlobalBtn {
+      background: #25D366;
+      padding: 6px 14px;
+      border-radius: 40px;
+      color: white !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+    }
+
+    .hero {
+      background: linear-gradient(120deg, #ffedd9, #ffe2c4);
+      text-align: center;
+      padding: 2rem 1.2rem;
+      border-radius: 0 0 32px 32px;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: 1.7rem;
+      color: #7b3f1a;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .hero p {
+      max-width: 550px;
+      margin: 0.6rem auto 0;
+      color: #9b6a46;
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 0 8px;
+    }
+
+    .product-section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #b45b28;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 1.8rem;
+      width: 100%;
+      max-width: 330px;
+      overflow: hidden;
+      box-shadow: 0 12px 24px -10px rgba(98, 55, 27, 0.12);
+      transition: transform 0.2s ease, box-shadow 0.2s;
+      border: 1px solid #ffdebc;
+    }
+
+    .product-card:active {
+      transform: scale(0.99);
+    }
+
+    .product-img {
+      height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    
+    /* Background dengan nuansa baru */
+    .img-piscokbola {
+      background: radial-gradient(circle at 20% 35%, #f7bc6f, #dd8732);
+      position: relative;
+    }
+    
+    .img-rotigulung {
+      background: radial-gradient(circle at 80% 25%, #fae4bc, #f0c28a);
+      position: relative;
+    }
+
+    /* Ilustrasi logo baru: Piscok = coklat + pisang, Roti Gulung = cream */
+    .food-illustration {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 245, 225, 0.85);
+      width: 125px;
+      height: 125px;
+      border-radius: 60px;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+      transition: all 0.2s;
+    }
+    
+    .main-icon {
+      font-size: 3.8rem;
+      filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+    }
+    
+    .detail-icon {
+      font-size: 0.7rem;
+      background: rgba(255, 235, 200, 0.95);
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-top: 8px;
+      font-weight: bold;
+      color: #a54813;
+    }
+
+    .product-info {
+      padding: 1.2rem;
+    }
+
+    .product-name {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #4f2d15;
+      letter-spacing: -0.2px;
+    }
+
+    .product-desc {
+      font-size: 0.8rem;
+      color: #8b6342;
+      margin: 0.4rem 0;
+      line-height: 1.4;
+    }
+
+    .ingredients {
+      background: #fef2e6;
+      padding: 0.6rem;
+      border-radius: 18px;
+      font-size: 0.7rem;
+      margin: 0.7rem 0;
+      color: #5a3b22;
+    }
+
+    .price {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #bd601f;
+      margin: 0.5rem 0;
+    }
+
+    .whatsapp-order {
+      background: #25D366;
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 14px 12px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 0.6rem;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .whatsapp-order:active {
+      background: #128C7E;
+      transform: scale(0.97);
+    }
+
+    .info-bahan {
+      background: #fff4ea;
+      border-radius: 36px;
+      max-width: 1000px;
+      margin: 1.5rem auto 2rem;
+      padding: 1.5rem 1.2rem;
+    }
+
+    .info-title {
+      font-size: 1.4rem;
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      color: #aa571f;
+    }
+
+    .info-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: center;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 24px;
+      padding: 1.2rem;
+      width: 100%;
+      max-width: 270px;
+      border: 1px solid #ffe2c4;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    }
+
+    .info-card h3 {
+      color: #b45b28;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .info-card p {
+      font-size: 0.8rem;
+      color: #6f4a2c;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.2rem;
+      background: #eedbc8;
+      margin-top: 2rem;
+      color: #5c3a20;
+      font-size: 0.8rem;
+    }
+
+    .wa-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      border-radius: 50px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      z-index: 99;
+      text-decoration: none;
+      font-family: 'Quicksand', sans-serif;
+      transition: 0.2s;
+      -webkit-tap-highlight-color: transparent;
+      backdrop-filter: blur(4px);
+      background: #25D366dd;
+      border: none;
+    }
+    .wa-float:active {
+      background: #128C7E;
+      transform: scale(0.96);
+    }
+
+    button, a, .whatsapp-order, .nav-links a {
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+
+    @media (max-width: 640px) {
+      .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0.7rem 4%;
+      }
+      .logo {
+        font-size: 1.2rem;
+      }
+      .hero h1 {
+        font-size: 1.4rem;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .product-card {
+        max-width: 100%;
+        width: 100%;
+      }
+      .product-img {
+        height: 170px;
+      }
+      .food-illustration {
+        width: 105px;
+        height: 105px;
+      }
+      .main-icon {
+        font-size: 3rem;
+      }
+      .product-name {
+        font-size: 1.3rem;
+      }
+      .price {
+        font-size: 1.3rem;
+      }
+      .wa-float {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+        bottom: 16px;
+        right: 16px;
+      }
+      .info-card {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 1.5rem 1rem;
+      }
+      .product-info {
+        padding: 1rem;
+      }
+      .whatsapp-order {
+        padding: 12px;
+        font-size: 0.9rem;
+      }
+      .nav-links a {
+        font-size: 0.75rem;
+      }
+      #waGlobalBtn {
+        padding: 5px 12px;
+        font-size: 0.7rem;
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo"><i class="fas fa-cookie-bite"></i> Cemilan Remaja</div>
+  <div class="nav-links">
+    <a href="#">Beranda</a>
+    <a href="#produk">Menu</a>
+    <a href="#bahan">Info Bahan</a>
+    <a href="#" id="waGlobalBtn"><i class="fab fa-whatsapp"></i> Pesan</a>
+  </div>
+</div>
+
+<div class="hero">
+  <h1>🍫 Piscok Bola-Bola Lumer & Roti Gulung Cream 🥐</h1>
+  <p>Homemade berkualitas, tanpa pengawet. Camilan bulat renyah lumer & roti gulung lembut! Enak banget buat ngemil.</p>
+</div>
+
+<section id="produk" class="product-section">
+  <h2 class="section-title">✨ Menu Spesial ✨</h2>
+  <div class="product-grid" id="productGrid"></div>
+</section>
+
+<section id="bahan" class="info-bahan">
+  <div class="info-title">📖 Penjelasan & Komposisi Bahan</div>
+  <div class="info-flex">
+    <div class="info-card">
+      <h3>🍫 Piscok Bola-Bola Lumer</h3>
+      <p><strong>⭐ Penjelasan:</strong> Bola-bola pisang cokelat crispy dengan lelehan cokelat premium di dalamnya. Perpaduan pisang kepok manis dan dark chocolate, dibalut tepung panir renyah. Disajikan hangat dengan topping meses.</p>
+      <p><strong>🥣 Bahan:</strong> Pisang kepok, dark cooking chocolate, tepung panir, tepung terigu, margarin, meses, gula halus, minyak goreng.</p>
+    </div>
+    <div class="info-card">
+      <h3>🥐 Roti Gulung Cream</h3>
+      <p><strong>⭐ Penjelasan:</strong> Roti lembut isian creamy stroberi & cokelat hazelnut, digulung rapi, dipanggang hingga keemasan. Topping keju creamy dan meses bikin nagih.</p>
+      <p><strong>🥣 Bahan:</strong> Tepung terigu protein tinggi, ragi instan, susu cair, mentega, gula, kuning telur, selai stroberi, cokelat hazelnut, keju cheddar, krim kental manis.</p>
+    </div>
+  </div>
+  <p style="text-align: center; margin-top: 1.5rem; font-size: 0.75rem; background: #fae5cf; padding: 8px 15px; border-radius: 60px; width: fit-content; margin-left: auto; margin-right: auto;">
+    ✨ Fresh after order, higienis, kemasan eksklusif ✨
+  </p>
+</section>
+
+<footer>
+  <p><i class="fas fa-heart" style="color:#c2692c;"></i> Cemilan Remaja - Camilan kekinian buat anak muda <i class="fas fa-heart" style="color:#c2692c;"></i></p>
+  <p style="margin-top: 6px;">🍫 Piscok Bola-Bola Lumer · 🥐 Roti Gulung Cream siap antar</p>
+  <p style="margin-top: 8px; font-size: 0.7rem;">📞 Pesan via WhatsApp: 0882 0065 76374</p>
+</footer>
+
+<a href="#" id="waFloatBtn" class="wa-float">
+  <i class="fab fa-whatsapp fa-lg"></i> <span>Pesan Sekarang</span>
+</a>
+
+<script>
+  const WA_NUMBER = "62882006576374";
+  
+  // PERUBAHAN UTAMA: Logo pertama (Piscok) = coklat + pisang 🍫🍌, 
+  // Logo kedua (Roti Gulung) = cream 🥛🥐 tanpa stroberi, full cream
+  const products = [
+    {
+      id: 1,
+      name: "Piscok Bola-Bola Lumer",
+      description: "Bola-bola pisang crispy dengan lelehan cokelat premium di dalam. Gurih, manis, lumer banget!",
+      ingredients: "Pisang kepok, dark cooking chocolate, tepung panir, tepung terigu, margarin, meses, gula halus.",
+      price: 4000,
+      imgClass: "img-piscokbola",
+      iconMain: "🍫🍌",      // coklat + pisang sesuai permintaan
+      iconExtra: "Lumer 🔥"
+    },
+    {
+      id: 2,
+      name: "Roti Gulung Cream",
+      description: "Roti susu lembut digulung dengan isian creamy stroberi & cokelat hazelnut, topping keju creamy.",
+      ingredients: "Tepung protein tinggi, ragi, susu cair, mentega, selai stroberi, cokelat hazelnut, keju cheddar, krim.",
+      price: 4000,
+      imgClass: "img-rotigulung",
+      iconMain: "🥐🥛",    // roti gulung + cream (ganti stroberi jadi cream/susu)
+      iconExtra: "Creamy Melt!"
+    }
+  ];
+
+  function orderViaWhatsApp(productName, productPrice) {
+    let message = `Halo *Cemilan Remaja*, saya ingin memesan:\n\n🍽️ *${productName}*\n💰 Harga: Rp ${productPrice.toLocaleString()}\n📦 Jumlah: (isi jumlah pesanan)\n\n📍 Alamat: (isi alamat lengkap)\n💳 Pembayaran: (COD / Transfer)\n\nTerima kasih!`;
+    const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(waLink, '_blank');
+  }
+
+  function orderBothViaWA() {
+    let message = "Halo *Cemilan Remaja*, saya mau order:\n\n";
+    products.forEach(p => {
+      message += `🍽️ *${p.name}* - Rp ${p.price.toLocaleString()}\n   Jumlah: (isi jumlah)\n`;
+    });
+    message += `\n📍 Alamat lengkap: (isi alamat)\n💳 Metode bayar: (COD/Transfer)\n\nTerima kasih!`;
+    const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(waLink, '_blank');
+  }
+
+  function renderProducts() {
+    const container = document.getElementById('productGrid');
+    if (!container) return;
+    container.innerHTML = products.map(product => `
+      <div class="product-card">
+        <div class="product-img ${product.imgClass}">
+          <div class="food-illustration">
+            <div class="main-icon">${product.iconMain}</div>
+            <div class="detail-icon">${product.iconExtra}</div>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">${product.name}</div>
+          <div class="product-desc">${product.description}</div>
+          <div class="ingredients">
+            <i class="fas fa-mortar-pestle"></i> <strong>Bahan :</strong> ${product.ingredients}
+          </div>
+          <div class="price">Rp ${product.price.toLocaleString()}</div>
+          <button class="whatsapp-order" data-name="${product.name}" data-price="${product.price}">
+            <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+          </button>
+        </div>
+      </div>
+    `).join('');
+
+    document.querySelectorAll('.whatsapp-order').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const name = btn.getAttribute('data-name');
+        const price = parseInt(btn.getAttribute('data-price'));
+        orderViaWhatsApp(name, price);
+      });
+    });
+  }
+
+  const waGlobalBtn = document.getElementById('waGlobalBtn');
+  if (waGlobalBtn) {
+    waGlobalBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      orderBothViaWA();
+    });
+  }
+
+  const waFloatBtn = document.getElementById('waFloatBtn');
+  if (waFloatBtn) {
+    waFloatBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      orderBothViaWA();
+    });
+  }
+
+  renderProducts();
+</script>
+</body>
+</html>
